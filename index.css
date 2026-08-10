@@ -1,0 +1,1130 @@
+
+/* =========================================================
+   NYUMBANI HOTEL — LANDING PAGE
+   INDEX.CSS
+
+   Main Colors:
+   Burgundy: #7A0019
+   Gold:     #D4AF37
+   Ivory:    #FFF8E7
+   ========================================================= */
+
+
+/* =========================================================
+   ROOT / GENERAL
+   ========================================================= */
+
+:root {
+    --burgundy: #7A0019;
+    --dark-burgundy: #4A000F;
+    --gold: #D4AF37;
+    --ivory: #FFF8E7;
+    --white: #FFFFFF;
+    --dark: #241818;
+    --light-gold: #F4E7B5;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HTML
+   ========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+body {
+    min-height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    color:
+        var(--dark);
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(212, 175, 55, 0.10),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #fffdf7,
+            var(--ivory)
+        );
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   LANDING PAGE
+   ========================================================= */
+
+.landing-page {
+    width: 100%;
+
+    min-height:
+        calc(100vh - 120px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding:
+        45px 20px 55px;
+
+    position: relative;
+}
+
+
+/* =========================================================
+   HOTEL LOGO
+   ========================================================= */
+
+.hotel-logo {
+    display: block;
+
+    width: 125px;
+    height: 125px;
+
+    object-fit: contain;
+
+    margin:
+        0 auto 18px;
+
+    background:
+        transparent;
+
+    animation:
+        logoReveal 0.8s ease both;
+}
+
+
+/* =========================================================
+   HOTEL NAME
+   ========================================================= */
+
+.landing-page h1 {
+    margin: 0;
+
+    color:
+        var(--burgundy);
+
+    font-size:
+        clamp(2rem, 5vw, 3.5rem);
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        5px;
+
+    line-height:
+        1.1;
+
+    text-shadow:
+        0 2px 8px rgba(122, 0, 25, 0.10);
+
+    animation:
+        titleReveal 0.8s ease 0.15s both;
+}
+
+
+/* =========================================================
+   PAGE TITLE
+   ========================================================= */
+
+.page-title {
+    margin:
+        12px 0 25px;
+
+    color:
+        var(--gold);
+
+    font-size:
+        clamp(1rem, 2.5vw, 1.45rem);
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        7px;
+
+    line-height:
+        1.2;
+
+    text-transform:
+        uppercase;
+
+    animation:
+        titleReveal 0.8s ease 0.25s both;
+}
+
+
+/* =========================================================
+   BAR IMAGE
+   ========================================================= */
+
+.bar-image-container {
+    position: relative;
+
+    width: min(1000px, 92%);
+
+    height: 300px;
+
+    margin:
+        0 auto 30px;
+
+    overflow: hidden;
+
+    border:
+        3px solid var(--gold);
+
+    border-radius: 18px;
+
+    background:
+        var(--dark-burgundy);
+
+    box-shadow:
+        0 15px 40px rgba(122, 0, 25, 0.18),
+        0 4px 15px rgba(0, 0, 0, 0.08);
+
+    animation:
+        imageReveal 0.9s ease 0.35s both;
+}
+
+
+/* =========================================================
+   BAR IMAGE
+   ========================================================= */
+
+.bar-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition:
+        transform 0.6s ease;
+}
+
+
+/* =========================================================
+   IMAGE HOVER
+   ========================================================= */
+
+.bar-image-container:hover .bar-image {
+    transform:
+        scale(1.03);
+}
+
+
+/* =========================================================
+   IMAGE GOLD OVERLAY
+   ========================================================= */
+
+.bar-image-container::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(122, 0, 25, 0.03),
+            rgba(74, 0, 15, 0.18)
+        );
+}
+
+
+/* =========================================================
+   WELCOME TEXT
+   ========================================================= */
+
+.welcome-text {
+    margin:
+        5px 0 4px;
+
+    color:
+        var(--burgundy);
+
+    font-size:
+        clamp(1.2rem, 3vw, 1.65rem);
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        1px;
+
+    animation:
+        textReveal 0.8s ease 0.5s both;
+}
+
+
+/* =========================================================
+   SUBTITLE
+   ========================================================= */
+
+.subtitle {
+    margin:
+        0 0 28px;
+
+    color:
+        #665252;
+
+    font-size:
+        clamp(0.9rem, 2vw, 1.05rem);
+
+    letter-spacing:
+        1px;
+
+    animation:
+        textReveal 0.8s ease 0.6s both;
+}
+
+
+/* =========================================================
+   MENU BUTTON
+   ========================================================= */
+
+.menu-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width:
+        210px;
+
+    padding:
+        14px 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--burgundy),
+            var(--dark-burgundy)
+        );
+
+    color:
+        var(--white);
+
+    border:
+        2px solid var(--gold);
+
+    border-radius:
+        10px;
+
+    text-decoration:
+        none;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        0.95rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        2px;
+
+    box-shadow:
+        0 8px 20px rgba(122, 0, 25, 0.18);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+
+    animation:
+        buttonReveal 0.8s ease 0.7s both;
+}
+
+
+/* =========================================================
+   MENU BUTTON HOVER
+   ========================================================= */
+
+.menu-button:hover {
+    background:
+        var(--gold);
+
+    color:
+        var(--burgundy);
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 28px rgba(122, 0, 25, 0.22);
+}
+
+
+/* =========================================================
+   MENU BUTTON ACTIVE
+   ========================================================= */
+
+.menu-button:active {
+    transform:
+        translateY(0)
+        scale(0.98);
+}
+
+ /* =========================================================
+    FOOTER
+    ========================================================= */
+
+footer {
+    position: relative;
+
+    width: 100%;
+
+    padding:
+        35px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7A0019,
+            #4A000F
+        );
+
+    color:
+        var(--white);
+
+    border-top:
+        4px solid var(--gold);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   FOOTER DECORATIVE GLOW
+   ========================================================= */
+
+footer::before {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    top: -150px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(212, 175, 55, 0.08);
+
+    pointer-events:
+        none;
+}
+
+
+/* =========================================================
+   FOOTER HOTEL NAME
+   ========================================================= */
+
+footer p {
+    position: relative;
+
+    margin:
+        0 0 6px;
+
+    color:
+        var(--gold);
+
+    font-size:
+        1.25rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        2px;
+}
+
+
+/* =========================================================
+   FOOTER TAGLINE
+   ========================================================= */
+
+footer span {
+    position: relative;
+
+    display: block;
+
+    color:
+        var(--white);
+
+    font-size:
+        0.9rem;
+
+    opacity:
+        0.9;
+
+    letter-spacing:
+        0.5px;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes logoReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-25px)
+            scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+@keyframes titleReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+@keyframes imageReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+@keyframes textReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+@keyframes buttonReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    position: relative;
+
+    width: 100%;
+
+    padding:
+        35px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7A0019,
+            #4A000F
+        );
+
+    color:
+        var(--white);
+
+    border-top:
+        4px solid var(--gold);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   FOOTER DECORATIVE GLOW
+   ========================================================= */
+
+footer::before {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    top: -150px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(212, 175, 55, 0.08);
+
+    pointer-events:
+        none;
+}
+
+
+/* =========================================================
+   FOOTER HOTEL NAME
+   ========================================================= */
+
+footer p {
+    position: relative;
+
+    margin:
+        0 0 6px;
+
+    color:
+        var(--gold);
+
+    font-size:
+        1.25rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        2px;
+}
+
+
+/* =========================================================
+   FOOTER TAGLINE
+   ========================================================= */
+
+footer span {
+    position: relative;
+
+    display: block;
+
+    color:
+        var(--white);
+
+    font-size:
+        0.9rem;
+
+    opacity:
+        0.9;
+
+    letter-spacing:
+        0.5px;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes logoReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-25px)
+            scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes titleReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes imageReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes textReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes buttonReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .landing-page {
+        min-height:
+            calc(100vh - 110px);
+
+        padding:
+            40px 18px 45px;
+    }
+
+
+    .hotel-logo {
+        width: 110px;
+        height: 110px;
+    }
+
+
+    .landing-page h1 {
+        font-size:
+            clamp(1.8rem, 6vw, 2.8rem);
+
+        letter-spacing:
+            4px;
+    }
+
+
+    .page-title {
+        font-size:
+            1rem;
+
+        letter-spacing:
+            5px;
+    }
+
+
+    .bar-image-container {
+        width: 94%;
+
+        height: 260px;
+
+        border-radius:
+            15px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .landing-page {
+        min-height:
+            calc(100vh - 105px);
+
+        padding:
+            30px 15px 40px;
+    }
+
+
+    /* -----------------------------------------------------
+       LOGO
+       ----------------------------------------------------- */
+
+    .hotel-logo {
+        width: 90px;
+        height: 90px;
+
+        margin-bottom:
+            14px;
+    }
+
+
+    /* -----------------------------------------------------
+       HOTEL NAME
+       ----------------------------------------------------- */
+
+    .landing-page h1 {
+        font-size:
+            1.75rem;
+
+        letter-spacing:
+            3px;
+    }
+
+
+    /* -----------------------------------------------------
+       BAR MENU TITLE
+       ----------------------------------------------------- */
+
+    .page-title {
+        margin:
+            9px 0 18px;
+
+        font-size:
+            0.85rem;
+
+        letter-spacing:
+            4px;
+    }
+
+
+    /* -----------------------------------------------------
+       BAR IMAGE
+       ----------------------------------------------------- */
+
+    .bar-image-container {
+        width: 94%;
+
+        height: 210px;
+
+        margin-bottom:
+            22px;
+
+        border:
+            2px solid var(--gold);
+
+        border-radius:
+            12px;
+    }
+
+
+    /* -----------------------------------------------------
+       WELCOME
+       ----------------------------------------------------- */
+
+    .welcome-text {
+        font-size:
+            1.15rem;
+
+        margin-bottom:
+            3px;
+    }
+
+
+    /* -----------------------------------------------------
+       SUBTITLE
+       ----------------------------------------------------- */
+
+    .subtitle {
+        font-size:
+            0.82rem;
+
+        margin-bottom:
+            22px;
+
+        padding:
+            0 8px;
+    }
+
+
+    /* -----------------------------------------------------
+       MENU BUTTON
+       ----------------------------------------------------- */
+
+    .menu-button {
+        min-width:
+            190px;
+
+        padding:
+            12px 22px;
+
+        font-size:
+            0.82rem;
+
+        letter-spacing:
+            1.5px;
+
+        border-radius:
+            9px;
+    }
+
+
+    /* -----------------------------------------------------
+       FOOTER
+       ----------------------------------------------------- */
+
+    footer {
+        padding:
+            28px 15px;
+    }
+
+
+    footer p {
+        font-size:
+            1.05rem;
+    }
+
+
+    footer span {
+        font-size:
+            0.8rem;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .landing-page {
+        padding:
+            25px 12px 35px;
+    }
+
+
+    .hotel-logo {
+        width: 78px;
+        height: 78px;
+    }
+
+
+    .landing-page h1 {
+        font-size:
+            1.5rem;
+
+        letter-spacing:
+            2px;
+    }
+
+
+    .page-title {
+        font-size:
+            0.75rem;
+
+        letter-spacing:
+            3px;
+    }
+
+
+    .bar-image-container {
+        height:
+            180px;
+
+        width:
+            96%;
+    }
+
+
+    .welcome-text {
+        font-size:
+            1rem;
+    }
+
+
+    .subtitle {
+        font-size:
+            0.75rem;
+    }
+
+
+    .menu-button {
+        min-width:
+            175px;
+
+        padding:
+            11px 18px;
+
+        font-size:
+            0.75rem;
+    }
+
+
+    footer {
+        padding:
+            25px 12px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY — REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        scroll-behavior:
+            auto !important;
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+    }
+}

@@ -1,0 +1,992 @@
+/* =========================================================
+   NYUMBANI HOTEL — BAR MENU
+   Main Colors:
+   Burgundy: #7A0019
+   Gold:     #D4AF37
+   Ivory:    #FFF8E7
+   ========================================================= */
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family:
+        "Georgia",
+        "Times New Roman",
+        serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(212, 175, 55, 0.08),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #fffdf5,
+            #FFF8E7
+        );
+
+    color: #2b1a1a;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.bar-header {
+    position: relative;
+
+    width: 100%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7A0019 0%,
+            #620014 50%,
+            #4A000F 100%
+        );
+
+    color: #FFF8E7;
+
+    padding: 35px 20px 30px;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    border-bottom: 4px solid #D4AF37;
+}
+
+
+/* =========================================================
+   DECORATIVE GOLD GLOW
+   ========================================================= */
+
+.bar-header::before,
+.bar-header::after {
+    content: "";
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+.bar-header::before {
+    width: 260px;
+    height: 260px;
+
+    top: -150px;
+    left: -100px;
+
+    background:
+        rgba(212, 175, 55, 0.12);
+}
+
+
+.bar-header::after {
+    width: 300px;
+    height: 300px;
+
+    bottom: -190px;
+    right: -100px;
+
+    background:
+        rgba(212, 175, 55, 0.10);
+}
+
+
+/* =========================================================
+   HEADER CONTENT
+   ========================================================= */
+
+.header-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   HOTEL LOGO
+   ========================================================= */
+
+.logo-container {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+
+.hotel-logo {
+    display: block;
+
+    width: 90px;
+    height: 90px;
+
+    object-fit: contain;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HOTEL NAME
+   ========================================================= */
+
+.header-content h1 {
+    margin: 0;
+
+    color: #FFFFFF;
+
+    font-size:
+        clamp(2rem, 5vw, 3.8rem);
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    line-height: 1.1;
+
+    text-align: center;
+
+    text-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   BAR MENU TITLE
+   ========================================================= */
+
+.header-content p {
+    margin: 12px 0 25px;
+
+    color: #D4AF37;
+
+    font-size:
+        clamp(1rem, 2.5vw, 1.5rem);
+
+    font-weight: 600;
+
+    letter-spacing: 7px;
+
+    line-height: 1.2;
+
+    text-align: center;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   BAR IMAGE
+   ========================================================= */
+
+.bar-image-container {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    height: 210px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border: 2px solid #D4AF37;
+
+    border-radius: 8px;
+}
+
+
+.bar-image {
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+}
+
+/* =========================================================
+   MOBILE HEADER
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .bar-header {
+
+        padding:
+            25px 15px 22px;
+    }
+
+
+    .hotel-logo {
+
+        width: 75px;
+
+        height: 75px;
+    }
+
+
+    .logo-container {
+
+        margin-bottom: 12px;
+    }
+
+
+    .header-content h1 {
+
+        font-size: 1.8rem;
+
+        letter-spacing: 3px;
+    }
+
+
+    .header-content p {
+
+        margin-top: 10px;
+
+        margin-bottom: 18px;
+
+        font-size: 0.9rem;
+
+        letter-spacing: 4px;
+    }
+
+
+    .bar-image-container {
+
+        height: 150px;
+
+        border-radius: 6px;
+    }
+
+}
+
+
+/* =========================================================
+   MAIN MENU CONTAINER
+   ========================================================= */
+
+.bar-menu-container {
+
+    width:
+        min(1200px, 92%);
+
+    margin:
+        55px auto 70px;
+}
+
+
+/* =========================================================
+   MENU SECTION
+   ========================================================= */
+
+.menu-section {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+
+    background:
+        rgba(255, 255, 255, 0.82);
+
+    border:
+        1px solid rgba(212, 175, 55, 0.35);
+
+    border-radius: 22px;
+
+    margin-bottom: 32px;
+
+    padding: 28px;
+
+    box-shadow:
+        0 10px 30px rgba(122, 0, 25, 0.08),
+        0 2px 8px rgba(0, 0, 0, 0.04);
+
+    backdrop-filter:
+        blur(8px);
+
+    animation:
+        sectionReveal 0.8s ease both;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* =========================================================
+   SECTION HOVER
+   ========================================================= */
+
+.menu-section:hover {
+
+    border-color:
+        rgba(212, 175, 55, 0.75);
+
+    box-shadow:
+        0 15px 38px rgba(122, 0, 25, 0.13),
+        0 4px 12px rgba(212, 175, 55, 0.08);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+   ========================================================= */
+
+.menu-section h2 {
+
+    position: relative;
+
+    display: inline-block;
+
+    grid-column:
+        1 / -1;
+
+    margin-bottom: 22px;
+
+    color: #7A0019;
+
+    font-size:
+        clamp(1.4rem, 3vw, 2rem);
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   GOLD UNDERLINE
+   ========================================================= */
+
+.menu-section h2::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -8px;
+
+    width: 55%;
+
+    height: 3px;
+
+    background: #D4AF37;
+
+    border-radius: 5px;
+
+    transition:
+        width 0.35s ease;
+}
+
+
+.menu-section:hover h2::after {
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   COCKTAIL SUBSECTION
+   ========================================================= */
+
+.menu-section h3 {
+
+    grid-column:
+        1 / -1;
+
+    margin:
+        4px 0 18px;
+
+    color: #7A0019;
+
+    font-size: 1rem;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    border-left:
+        4px solid #D4AF37;
+
+    padding-left: 10px;
+}
+
+/* =========================================================
+   MENU ITEM CARDS
+   ========================================================= */
+
+.menu-item {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    min-height: 65px;
+
+    padding: 16px 18px;
+
+    background: #FFF8E7;
+
+    border:
+        1px solid rgba(122, 0, 25, 0.09);
+
+    border-left:
+        4px solid transparent;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.045);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+
+    animation:
+        cardReveal 0.65s ease both;
+}
+
+
+/* =========================================================
+   STAGGERED CARD ANIMATION
+   ========================================================= */
+
+.menu-item:nth-child(2) {
+    animation-delay: 0.05s;
+}
+
+.menu-item:nth-child(3) {
+    animation-delay: 0.10s;
+}
+
+.menu-item:nth-child(4) {
+    animation-delay: 0.15s;
+}
+
+.menu-item:nth-child(5) {
+    animation-delay: 0.20s;
+}
+
+.menu-item:nth-child(6) {
+    animation-delay: 0.25s;
+}
+
+.menu-item:nth-child(7) {
+    animation-delay: 0.30s;
+}
+
+.menu-item:nth-child(8) {
+    animation-delay: 0.35s;
+}
+
+.menu-item:nth-child(9) {
+    animation-delay: 0.40s;
+}
+
+.menu-item:nth-child(10) {
+    animation-delay: 0.45s;
+}
+
+
+/* =========================================================
+   CARD HOVER
+   ========================================================= */
+
+.menu-item:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.01);
+
+    background: #FFFFFF;
+
+    border-left-color:
+        #D4AF37;
+
+    box-shadow:
+        0 12px 25px rgba(122, 0, 25, 0.12),
+        0 4px 10px rgba(212, 175, 55, 0.12);
+}
+
+
+/* =========================================================
+   ITEM NAME
+   ========================================================= */
+
+.menu-item span:first-child {
+
+    color: #3a2525;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   PRICE
+   ========================================================= */
+
+.menu-item .price {
+
+    flex-shrink: 0;
+
+    color: #7A0019;
+
+    background:
+        rgba(212, 175, 55, 0.16);
+
+    border:
+        1px solid rgba(212, 175, 55, 0.4);
+
+    padding:
+        7px 11px;
+
+    border-radius: 9px;
+
+    font-size: 0.92rem;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.menu-item:hover .price {
+
+    background: #7A0019;
+
+    color: #D4AF37;
+
+    transform:
+        scale(1.05);
+}
+
+
+/* =========================================================
+   CONTACT SECTION
+   ========================================================= */
+
+.contact-section {
+
+    position: relative;
+
+    width:
+        min(1200px, 92%);
+
+    margin:
+        0 auto 70px;
+
+    padding:
+        45px 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7A0019,
+            #520010
+        );
+
+    color: #FFF8E7;
+
+    border:
+        1px solid rgba(212, 175, 55, 0.45);
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 40px rgba(122, 0, 25, 0.18);
+
+    animation:
+        sectionReveal 0.8s ease both;
+}
+
+
+/* =========================================================
+   CONTACT DECORATIVE GLOW
+   ========================================================= */
+
+.contact-section::before,
+.contact-section::after {
+
+    content: "";
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+.contact-section::before {
+
+    width: 250px;
+    height: 250px;
+
+    top: -150px;
+    right: -80px;
+
+    background:
+        rgba(212, 175, 55, 0.10);
+}
+
+
+.contact-section::after {
+
+    width: 200px;
+    height: 200px;
+
+    bottom: -130px;
+    left: -80px;
+
+    background:
+        rgba(212, 175, 55, 0.08);
+}
+
+/* =========================================================
+   CONTACT CONTENT
+   ========================================================= */
+
+.contact-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   CONTACT HEADING
+   ========================================================= */
+
+.contact-content h2 {
+
+    margin-bottom: 30px;
+
+    color: #D4AF37;
+
+    font-size:
+        clamp(1.4rem, 3vw, 2rem);
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   CONTACT DETAILS
+   ========================================================= */
+
+.contact-details {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+
+    max-width: 850px;
+
+    margin:
+        0 auto;
+}
+
+
+/* =========================================================
+   INDIVIDUAL CONTACT CARD
+   ========================================================= */
+
+.contact-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding:
+        17px 20px;
+
+    text-align: left;
+
+    background:
+        rgba(255, 248, 231, 0.08);
+
+    border:
+        1px solid rgba(212, 175, 55, 0.25);
+
+    border-radius: 14px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* =========================================================
+   CONTACT CARD HOVER
+   ========================================================= */
+
+.contact-item:hover {
+
+    transform:
+        translateY(-4px);
+
+    background:
+        rgba(255, 248, 231, 0.13);
+
+    border-color:
+        rgba(212, 175, 55, 0.65);
+}
+
+
+/* =========================================================
+   CONTACT ICON
+   ========================================================= */
+
+.contact-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 42px;
+    height: 42px;
+
+    background:
+        rgba(212, 175, 55, 0.16);
+
+    border:
+        1px solid rgba(212, 175, 55, 0.4);
+
+    border-radius: 50%;
+
+    font-size: 1.15rem;
+}
+
+
+/* =========================================================
+   CONTACT TEXT
+   ========================================================= */
+
+.contact-item strong {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #D4AF37;
+
+    font-size: 0.85rem;
+
+    letter-spacing: 0.8px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CONTACT LINKS
+   ========================================================= */
+
+.contact-item a {
+
+    color: #FFF8E7;
+
+    font-size: 0.95rem;
+
+    text-decoration: none;
+
+    word-break: break-word;
+
+    transition:
+        color 0.3s ease;
+}
+
+
+.contact-item a:hover {
+
+    color: #D4AF37;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.bar-footer {
+
+    position: relative;
+
+    background: #7A0019;
+
+    color: #FFF8E7;
+
+    text-align: center;
+
+    padding:
+        45px 20px;
+
+    border-top:
+        4px solid #D4AF37;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   FOOTER DECORATIVE GLOW
+   ========================================================= */
+
+.bar-footer::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    top: -150px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(212, 175, 55, 0.08);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   FOOTER HOTEL NAME
+   ========================================================= */
+
+.bar-footer h3 {
+
+    position: relative;
+
+    color: #D4AF37;
+
+    font-size: 1.4rem;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   FOOTER TEXT
+   ========================================================= */
+
+.bar-footer p {
+
+    position: relative;
+
+    margin-top: 7px;
+
+    font-size: 0.95rem;
+
+    opacity: 0.9;
+}
+
+
+/* =========================================================
+   FOOTER YEAR
+   ========================================================= */
+
+.footer-year {
+
+    margin-top: 15px;
+
+    font-size: 0.8rem;
+
+    opacity: 0.7;
+}
+
